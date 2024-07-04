@@ -14,18 +14,24 @@ export default function Header() {
   return (
     <header className="sticky top-0 backdrop-blur border-b border-b-black/10">
       <div className="flex items-center gap-5 p-2 bg-black/5">
-        <CalendarIcon className="w-16 h-16" />
+        <CalendarIcon className="w-16 h-16" data-testid="app-logo" />
 
-        <h1 className="flex-grow text-4xl font-bold">ERS</h1>
+        <h1 className="flex-grow text-4xl font-bold" data-testid="app-name">
+          ERS
+        </h1>
 
         {token && roles?.includes("moderator") && <Button>Create New</Button>}
 
         {token ? (
-          <Button onClick={handleLogout}>Logout</Button>
+          <Button onClick={handleLogout} data-testid="button-logout">
+            Logout
+          </Button>
         ) : (
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="min-w-20">Login</Button>
+              <Button className="min-w-20" data-testid="button-login">
+                Login
+              </Button>
             </DialogTrigger>
             <DialogContent className="justify-center gap-10">
               <LoginForm />

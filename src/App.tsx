@@ -19,7 +19,12 @@ function App() {
 
       <main className="max-w-screen-xl mx-auto p-5">
         <section className="mt-5">
-          <h1 className="text-4xl font-semibold">Events</h1>
+          <h1
+            className="text-4xl font-semibold"
+            data-testid="event-page-header"
+          >
+            Events
+          </h1>
 
           <div className="mt-5">
             <Input placeholder="Search Event" />
